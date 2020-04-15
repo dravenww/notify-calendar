@@ -1,5 +1,5 @@
 //index.js
-import util from '../../utils/index'
+import util, { formatTime } from '../../utils/index'
 import {calendarType, levelType, repeatType} from '../../utils/const'
 const app = getApp()
 
@@ -27,7 +27,23 @@ Page({
     })
   },
   handleSubmit() {
-    console.log(this.data.info)
+    const info = this.data.info;
+    wx.cloud.callFunction({
+      name: 'insertNotify',
+      data: {
+        title: info.title,
+        desc: info.desc,
+        date: info.date,
+        time: info.time,
+        repeat_type: info.repeat_type,
+        level: info.level,
+        calendar: info.calendar,
+      }
+    }).then(res => {
+      console.log(res)
+    }).catch(e => {
+      console.log(e)
+    })
   },
 
   handleProxy(e) {

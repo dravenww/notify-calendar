@@ -72,5 +72,13 @@ Page({
     wx.setNavigationBarTitle({
       title: '日历',
     })
+    wx.cloud.callFunction({
+      name: 'notifyList'
+    }).then(res => {
+      console.log('success')
+      console.log(res)
+    }).catch(e => {
+      console.log(e)
+    })
   }
 })

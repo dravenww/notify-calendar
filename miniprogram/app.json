@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/main/index",
-    "pages/add/index"
+    "pages/add/index",
+    "pages/main/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,5 +31,5 @@
     ],
     "position": "bottom"
   },
-  "sitemapLocation": "sitemap96.json"
+  "sitemapLocation": "sitemap.json"
 }
