@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="notify-list">
+  <view wx:key="index" bindtap="handleClick" data-id="{{item.id}}" wx:for="{{list}}" class="notify-item-container notify-item-level-{{index}}">
+    <view wx:if="item.complete === 1" class="complete">已完成</view>
+    <view class="title">{{item.title}}</view>
+    <view class="desc">{{item.desc}}</view>
+    <view class="info">
+      <view class="time">提醒时间:{{calendarType[item.calendar]}} {{item.date}} {{item.time}}</view>
+      <view class="repeat">{{repeatType[item.repeat_type]}}</view>
+    </view>
+  </view>
+</view>

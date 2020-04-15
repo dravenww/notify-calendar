@@ -1,0 +1,59 @@
+/**index.wxss**/
+
+.notify-list {
+  padding: 5px 10px;
+}
+.notify-list .notify-item-container {
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  padding: 5px 5px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.notify-list .notify-item-container.notify-item-level-0 .title {
+  color: #ff0000;
+}
+.notify-list .notify-item-container.notify-item-level-1 .title {
+  color: #560000;
+}
+.notify-list .notify-item-container.notify-item-level-2 .title {
+  color: #000000;
+}
+.notify-list .notify-item-container:after {
+  content: "";
+  clear: both;
+  display: inline-block;
+}
+.notify-list .notify-item-container .complete {
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 1px solid #ff0000;
+  border-radius: 5px;
+  height: 14px;
+  line-height: 14px;
+  padding: 1px 5px;
+  color: #000000;
+}
+.notify-list .notify-item-container .title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #000000;
+}
+.notify-list .notify-item-container .desc {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #666666;
+}
+.notify-list .notify-item-container .info {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #333333;
+}
+.notify-list .notify-item-container .info .time {
+  float: left;
+}
+.notify-list .notify-item-container .info .repeat {
+  float: right;
+}

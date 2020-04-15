@@ -1,0 +1,65 @@
+<!--index.wxml-->
+  <view class="notify-info-container">
+    <view class="group"><label class="_span label">标题</label>
+        <view class="group-content">
+            <view class="nc-input">
+              <input value="{{info.title}}" bindinput="handleProxy" data-key="title" maxlength="20" type="text" class="_input"/>
+            </view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">描述</label>
+        <view class="group-content">
+            <view class="nc-input">
+              <textarea value="{{info.desc}}" bindinput="handleProxy" data-key="desc" maxlength="100" class="_textarea"/></view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">重复类型</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker range="{{repeatType}}" bindchange="handleProxy" data-key="repeat_type" data-type="int" class="_picker">
+                    {{repeatType[info.repeat_type]}}
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">重要性</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker range="{{levelType}}" bindchange="handleProxy" data-key="level"  data-type="int" class="_picker">{{levelType[info.level]}}
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">日历选择</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker range="{{calendarType}}" bindchange="handleProxy" data-key="calendar"  data-type="int" class="_picker">{{calendarType[info.calendar]}}
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">提醒日期</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker mode="date" value="{{info.date}}" data-key="date" start="2015-09-01" bindchange="handleProxy" class="_picker">
+                    {{info.date}}
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="group"><label class="_span label">提醒时间</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker mode="time" value="{{info.time}}" data-key="time" start="8:00" bindchange="handleProxy" class="_picker">
+                    {{info.time}}
+                </picker>
+            </view>
+        </view>
+    </view>
+    <view class="group">
+        <view class="btns">
+            <button size="mini" bindtap="handleSubmit" type="primary" class="_button">保存
+            </button>
+        </view>
+    </view>
+  </view>
