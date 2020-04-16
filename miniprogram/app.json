@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/add/index",
-    "pages/main/index"
+    "pages/main/index",
+    "pages/info/index",
+    "pages/add/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -13,7 +14,7 @@
   "tabBar": {
     "color": "#999",
     "backgroundColor": "#fafafa",
-    "selectedColor": "#333",
+    "selectedColor": "#019777",
     "borderStyle": "white",
     "list": [
       {

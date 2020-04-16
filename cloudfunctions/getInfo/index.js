@@ -20,5 +20,14 @@ function getInfo(event) {
 // 云函数入口函数
 exports.main = async (event, context) => {
   const result = await getInfo(event)
-  return result
+  const info = result[0];
+  return {
+    title: info.title,
+    desc: info.desc,
+    date: info.date,
+    calendar: info.calendar,
+    level: info.level,
+    repeat_type: info.repeat_type,
+    time: info.time
+  }
 }

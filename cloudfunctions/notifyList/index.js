@@ -21,5 +21,19 @@ function getList() {
 // 云函数入口函数
 exports.main = async (event, context) => {
   const result = await getList()
-  return result
+  let list = [];
+  result.forEach((item, index) => {
+    list.push({
+      id: item._id,
+      title: item.title,
+      desc: item.desc,
+      date: item.date,
+      calendar: item.calendar,
+      level: item.level,
+      repeat_type: item.repeat_type,
+      time: item.time,
+      complete: item.complete,
+    })
+  });
+  return list
 }

@@ -2,6 +2,7 @@
 
 .notify-info-container {
   width: 100%;
+  padding-top: 20px;
 }
 .notify-info-container .group {
   padding: 0 10px;

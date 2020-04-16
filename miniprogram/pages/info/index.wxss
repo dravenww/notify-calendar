@@ -1,0 +1,91 @@
+/**index.wxss**/
+
+.notify-info-container {
+  width: 100%;
+}
+.notify-info-container .group {
+  padding: 0 10px;
+}
+.notify-info-container .group .btns {
+  text-align: center;
+}
+.notify-info-container .group .btns ._button {
+  margin: 10px;
+}
+.notify-info-container .group .label {
+  text-align: right;
+  vertical-align: middle;
+  float: left;
+  font-size: 14px;
+  color: #606266;
+  line-height: 40px;
+  padding: 0 12px 0 0;
+  box-sizing: border-box;
+  width: 80px;
+}
+.notify-info-container .group .group-content {
+  position: relative;
+  font-size: 14px;
+  padding-left: 80px;
+  margin-bottom: 0px;
+}
+.notify-info-container .group .group-picker {
+  margin-bottom: 5px;
+}
+.notify-info-container .group .group-content .nc-input {
+  position: relative;
+  font-size: 14px;
+  display: inline-block;
+  width: 100%;
+}
+
+.notify-info-container .group .group-content .nc-input ._input {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+.notify-info-container .group .group-content .nc-input ._picker {
+  -webkit-appearance: none;
+  background-color: #FFF;
+  background-image: none;
+  border-radius: 4px;
+  border: 1px solid #DCDFE6;
+  box-sizing: border-box;
+  color: #606266;
+  display: inline-block;
+  font-size: inherit;
+  height: 40px;
+  line-height: 40px;
+  outline: 0;
+  padding: 0 15px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+
+.notify-info-container .group .group-content .nc-input ._textarea {
+  display: block;
+  resize: vertical;
+  padding: 5px 15px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: inherit;
+  color: #606266;
+  background-color: #FFF;
+  background-image: none;
+  border: 1px solid #DCDFE6;
+  border-radius: 4px;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
