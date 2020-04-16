@@ -28,6 +28,7 @@ exports.main = async (event, context) => {
     calendar: info.calendar,
     level: info.level,
     repeat_type: info.repeat_type,
+    day: info.day,
     time: info.time
   }
 }

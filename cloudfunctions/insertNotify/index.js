@@ -17,6 +17,7 @@ function insertNotify(event) {
         repeat_type: event.repeat_type,
         level: event.level,
         calendar: event.calendar,
+        day: event.day,
         complete: 0,
         is_delete: 0,
         create_time: new Date().getTime(),

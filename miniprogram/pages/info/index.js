@@ -1,13 +1,14 @@
 //index.js
 import util from '../../utils/index'
-import {calendarType, levelType, repeatType} from '../../utils/const'
+import {calendarType, levelType, repeatType, dayType} from '../../utils/const'
 const app = getApp()
 
 Page({
   data: {
-    calendarType: calendarType,
-    repeatType: repeatType,
-    levelType: levelType,
+    calendarType,
+    repeatType,
+    levelType,
+    dayType,
     id: '',
     info: {}
   },
@@ -56,6 +57,7 @@ Page({
         repeat_type: info.repeat_type,
         level: info.level,
         calendar: info.calendar,
+        day: info.day
       }
     }).then(res => {
       wx.navigateBack()
@@ -89,7 +91,16 @@ Page({
       }
     }).then(res => {
       this.setData({
-        info: res.result
+        info: {
+          title: res.result.title,
+          desc: res.result.desc,
+          date: res.result.date,
+          time: res.result.time,
+          repeat_type: res.result.repeat_type,
+          level: res.result.level,
+          calendar: res.result.calendar,
+          day: res.result.day || 0
+        }
       }, () => {
         wx.hideLoading()
       })

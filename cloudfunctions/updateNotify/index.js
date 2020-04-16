@@ -17,6 +17,7 @@ function updateNotify(event) {
         repeat_type: event.repeat_type,
         level: event.level,
         calendar: event.calendar,
+        day: event.day,
         is_delete: 0,
         update_time: new Date().getTime()
       },

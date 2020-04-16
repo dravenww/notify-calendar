@@ -1,6 +1,6 @@
 //index.js
 import util, { formatTime } from '../../utils/index'
-import {calendarType, levelType, repeatType} from '../../utils/const'
+import {calendarType, levelType, repeatType, dayType} from '../../utils/const'
 const app = getApp()
 
 Page({
@@ -8,6 +8,7 @@ Page({
     calendarType: calendarType,
     repeatType: repeatType,
     levelType: levelType,
+    dayType: dayType,
     userInfo: {},
     info: {
       title: "",
@@ -17,7 +18,7 @@ Page({
       repeat_type: 0,
       calendar: 0,
       level: 0,
-      computed: 0,
+      day: 0
     }
   },
   setLocalData(data) {
@@ -27,6 +28,7 @@ Page({
     })
   },
   handleSubmit() {
+    util.showLoading();
     const info = this.data.info;
     wx.cloud.callFunction({
       name: 'insertNotify',
@@ -38,16 +40,41 @@ Page({
         repeat_type: info.repeat_type,
         level: info.level,
         calendar: info.calendar,
+        day: info.day
       }
     }).then(res => {
-      console.log(res)
+      wx.hideLoading()
+      wx.showToast({
+        title: '添加成功',
+        duration: 1500,
+        mask: true,
+      })
+      setTimeout(() => {
+        wx.switchTab({
+          url: '/pages/main/index'
+        })
+      }, 1500)
     }).catch(e => {
       console.log(e)
     })
   },
 
+  onShow() {
+    this.setData({
+      info: {
+        title: "",
+        desc: "",
+        date: util.formatDate(new Date()),
+        time: '10:00',
+        repeat_type: 0,
+        calendar: 0,
+        level: 0,
+        day: 0
+      }
+    })
+  },
+
   handleProxy(e) {
-    console.log(arguments)
     const key = e.currentTarget.dataset.key;
     const type = e.currentTarget.dataset.type;
     let value = e.detail.value;

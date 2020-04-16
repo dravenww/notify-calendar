@@ -10,7 +10,11 @@ function getList() {
     db.collection('notify-list').where({
       _openid: OPENID,
       is_delete: 0
-    }).get().then(res => {
+    })
+    .orderBy('complete', 'desc')
+    .orderBy('level', 'asc')
+    .orderBy('update_time', 'desc')
+    .get().then(res => {
         console.log(res)
         resolve(res.data)
       })
@@ -33,6 +37,7 @@ exports.main = async (event, context) => {
       repeat_type: item.repeat_type,
       time: item.time,
       complete: item.complete,
+      day: item.day || 0
     })
   });
   return list

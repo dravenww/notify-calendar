@@ -13,6 +13,14 @@
               <textarea value="{{info.desc}}" bindinput="handleProxy" data-key="desc" maxlength="100" class="_textarea"/></view>
         </view>
     </view>
+    <view class="group"><label class="_span label">重要性</label>
+        <view class="group-content group-picker">
+            <view class="nc-input">
+                <picker range="{{levelType}}" bindchange="handleProxy" data-key="level"  data-type="int" class="_picker">{{levelType[info.level]}}
+                </picker>
+            </view>
+        </view>
+    </view>
     <view class="group"><label class="_span label">重复类型</label>
         <view class="group-content group-picker">
             <view class="nc-input">
@@ -22,15 +30,19 @@
             </view>
         </view>
     </view>
-    <view class="group"><label class="_span label">重要性</label>
+
+    <view wx:if="{{info.repeat_type === 2}}" class="group">
+        <label class="_span label">星期选择</label>
         <view class="group-content group-picker">
             <view class="nc-input">
-                <picker range="{{levelType}}" bindchange="handleProxy" data-key="level"  data-type="int" class="_picker">{{levelType[info.level]}}
+                <picker range="{{dayType}}" bindchange="handleProxy" data-key="day"  data-type="int" class="_picker">{{dayType[info.day]}}
                 </picker>
             </view>
         </view>
     </view>
-    <view class="group"><label class="_span label">日历选择</label>
+    
+    <view wx:if="{{info.repeat_type === 0 || info.repeat_type === 3 || info.repeat_type === 4}}" class="group">
+        <label class="_span label">日历选择</label>
         <view class="group-content group-picker">
             <view class="nc-input">
                 <picker range="{{calendarType}}" bindchange="handleProxy" data-key="calendar"  data-type="int" class="_picker">{{calendarType[info.calendar]}}
@@ -38,7 +50,8 @@
             </view>
         </view>
     </view>
-    <view class="group"><label class="_span label">提醒日期</label>
+    <view  wx:if="{{info.repeat_type === 0 || info.repeat_type === 3 || info.repeat_type === 4}}" class="group">
+        <label class="_span label">提醒日期</label>
         <view class="group-content group-picker">
             <view class="nc-input">
                 <picker mode="date" value="{{info.date}}" data-key="date" start="2015-09-01" bindchange="handleProxy" class="_picker">

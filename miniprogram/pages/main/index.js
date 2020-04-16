@@ -1,13 +1,14 @@
 //index.js
 import util from '../../utils/index'
-import {calendarType, levelType, repeatType} from '../../utils/const'
+import {calendarType, levelType, repeatType, dayType} from '../../utils/const'
 const app = getApp()
 
 Page({
   data: {
-    calendarType: calendarType,
-    repeatType: repeatType,
-    levelType: levelType,
+    calendarType,
+    repeatType,
+    levelType,
+    dayType,
     loading: true,
     userInfo: {},
     list: []

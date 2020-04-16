@@ -7,7 +7,8 @@
         <view class="title">{{item.title}}</view>
         <view class="desc">{{item.desc}}</view>
         <view class="info">
-          <view class="time">提醒时间:{{calendarType[item.calendar]}} {{item.date}} {{item.time}}</view>
+          <view wx:if="{{item.repeat_type === 2}}" class="time">提醒时间:每{{dayType[item.day]}}</view>
+          <view wx:else class="time">提醒时间:{{calendarType[item.calendar]}} {{item.date}} {{item.time}}</view>
           <view class="repeat">{{repeatType[item.repeat_type]}}</view>
         </view>
       </view>
